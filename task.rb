@@ -5,7 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  p names[1]
+  names.push('斎藤')
+  p names
 end
 
 def q2
@@ -27,7 +28,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-  p sports.compact
+  p sports.compact!
   # 以下は変更しないで下さい
   p sports
 end
@@ -44,9 +45,8 @@ end
 def q6
   numbers1 = [1, 2, 3, 4, 5]
   # 以下に回答を記載
-  numbers1.each{|numbers2|
-  puts(numbers2 * 10)
-  }
+  numbers2 = numbers1.map {|number| number * 10}
+  p numbers2
 end
 
 def q7
@@ -72,15 +72,30 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each_with_index {|name , count_number|
-  puts('会員No.' +  (count_number + 1).to_s + name)}
+  names.each_with_index do|name , i|
+  puts("会員No.#{i+1} #{name}")
+  end
 end
+
+
+# 10
+# 12
+# 14
+# 15
+# 16
+
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-
+  foods.each {|food|
+  if food.include?('うに') then
+    puts '好物です'
+  else
+    puts 'まぁまぁ好きです'
+  end
+  }
 end
 
 def q11
@@ -94,7 +109,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  
 end
 
 def q13
