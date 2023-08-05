@@ -77,23 +77,17 @@ def q9
   end
 end
 
-# 10
-# 12
-# 14
-# 15
-# 16
-
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods.each {|food|
-  if food.include?('うに') then
-    puts '好物です'
-  else
-    puts 'まぁまぁ好きです'
+  foods.each do |food|
+    if food.include?('うに')
+      puts '好物です'
+    else
+      puts 'まぁまぁ好きです'
+    end
   end
-  }
 end
 
 def q11
@@ -107,7 +101,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  puts data[:user]
+  puts data[:user][:name]
 end
 
 def q13
@@ -129,18 +123,22 @@ def q15
   data1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
-  # 以下に回答を記載
-  if data1.has_key?(:age)
-    p "OK"
-  else
-    p "NG"
-  end
+    # 以下に回答を記載
+    if data1.has_key?(:age)
+      p "OK"
+    else
+      p "NG"
+    end
 
-  if data2.has_key?(:age)
-    p "OK"
-  else
-    p"NG"
-  end
+    if data2.has_key?(:age)
+      p "OK"
+    else
+      p"NG"
+    end
+
+    #三項演算子での書き方
+    p data1.has_key?(:age) ? "OK" : "NG"
+    p data2.has_key?(:age) ? "OK" : "NG"
 end
 
 def q16
@@ -158,8 +156,6 @@ def q16
 end
 
 class UserQ17
-  # 以下に回答を記載
-
 end
 
 def q17
